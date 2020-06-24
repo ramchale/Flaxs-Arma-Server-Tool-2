@@ -14,7 +14,7 @@ Option Explicit On
 
 
 <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
- Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0"),  _
+ Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
  Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
 Partial Friend NotInheritable Class MySettings
     Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -112,31 +112,19 @@ Partial Friend NotInheritable Class MySettings
             Me("steamUserName") = value
         End Set
     End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Configuration.DefaultSettingValueAttribute("")>
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
     Public Property steamPassword() As String
         Get
-            Return CType(Me("steamPassword"), String)
+            Return CType(Me("steamPassword"),String)
         End Get
         Set
             Me("steamPassword") = value
         End Set
     End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Configuration.DefaultSettingValueAttribute("")>
-    Public Property steamApiKey() As String
-        Get
-            Return CType(Me("steamApiKey"), String)
-        End Get
-        Set
-            Me("steamApiKey") = Value
-        End Set
-    End Property
-
+    
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
@@ -148,7 +136,7 @@ Partial Friend NotInheritable Class MySettings
             Me("firstRun") = value
         End Set
     End Property
-
+    
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
     Public Property Servers() As Global.FAST2.Models.ServerCollection
@@ -171,54 +159,6 @@ Partial Friend NotInheritable Class MySettings
             Me("clearSettings") = value
         End Set
     End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Configuration.DefaultSettingValueAttribute("False")>
-    Public Property checkForModUpdates() As Boolean
-        Get
-            Return CType(Me("checkForModUpdates"), Boolean)
-        End Get
-        Set
-            Me("checkForModUpdates") = value
-        End Set
-    End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-        Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-        Global.System.Configuration.DefaultSettingValueAttribute("True")>
-    Public Property checkForAppUpdates() As Boolean
-        Get
-            Return CType(Me("checkForAppUpdates"), Boolean)
-        End Get
-        Set
-            Me("checkForAppUpdates") = Value
-        End Set
-    End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Configuration.DefaultSettingValueAttribute("#FF03A9F4")>
-    Public Property primaryColour() As String
-        Get
-            Return CType(Me("primaryColour"),String)
-        End Get
-        Set
-            Me("primaryColour") = value
-        End Set
-    End Property
-
-    <Global.System.Configuration.UserScopedSettingAttribute(),
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-     Global.System.Configuration.DefaultSettingValueAttribute("#FF03A9F4")>
-    Public Property accentColour() As String
-        Get
-            Return CType(Me("accentColour"),String)
-        End Get
-        Set
-            Me("accentColour") = value
-        End Set
-    End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -234,10 +174,58 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property steamMods() As System.Collections.Generic.List(Of FAST2.Models.steamMod)
+     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+    Public Property excludeServerFolder() As Boolean
         Get
-            Return CType(Me("steamMods"),System.Collections.Generic.List(Of FAST2.Models.steamMod))
+            Return CType(Me("excludeServerFolder"),Boolean)
+        End Get
+        Set
+            Me("excludeServerFolder") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("#FF03A9F4")>  _
+    Public Property primaryColour() As String
+        Get
+            Return CType(Me("primaryColour"),String)
+        End Get
+        Set
+            Me("primaryColour") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("#FF03A9F4")>  _
+    Public Property accentColour() As String
+        Get
+            Return CType(Me("accentColour"),String)
+        End Get
+        Set
+            Me("accentColour") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+    Public Property checkForModUpdates() As String
+        Get
+            Return CType(Me("checkForModUpdates"),String)
+        End Get
+        Set
+            Me("checkForModUpdates") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+    Public Property steamMods() As String
+        Get
+            Return CType(Me("steamMods"),String)
         End Get
         Set
             Me("steamMods") = value
@@ -246,25 +234,25 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property localMods() As System.Collections.Generic.List(Of FAST2.Models.localMod)
+     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+    Public Property checkForAppUpdates() As Boolean
         Get
-            Return CType(Me("localMods"),System.Collections.Generic.List(Of FAST2.Models.localMod))
+            Return CType(Me("checkForAppUpdates"),Boolean)
         End Get
         Set
-            Me("localMods") = value
+            Me("checkForAppUpdates") = value
         End Set
     End Property
-
+    
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property localModFolders() As System.Collections.Generic.List(Of String)
+    Public Property steamApiKey() As String
         Get
-            Return CType(Me("localModFolders"),System.Collections.Generic.List(Of String))
+            Return CType(Me("steamApiKey"),String)
         End Get
         Set
-            Me("localModFolders") = value
+            Me("steamApiKey") = value
         End Set
     End Property
 End Class

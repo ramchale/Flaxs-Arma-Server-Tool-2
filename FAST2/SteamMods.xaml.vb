@@ -1,5 +1,8 @@
 ﻿Imports System.IO
 Imports System.Threading
+Imports System.Windows
+Imports System.Windows.Controls
+Imports System.Windows.Input
 Imports FAST2.Models
 
 Public Class SteamMods
@@ -129,13 +132,13 @@ Public Class SteamMods
         If MainWindow.Instance.ReadyToUpdate Then
             Dim modsToUpdate = New List(Of String)
 
-            For Each steamMod In My.Settings.steamMods
-                If steamMod.SteamLastUpdated > steamMod.LocalLastUpdated Then
-                    modsToUpdate.Add(steamMod.WorkshopId)
+            'For Each steamMod In My.Settings.steamMods
+            '    If steamMod.SteamLastUpdated > steamMod.LocalLastUpdated Then
+            '        modsToUpdate.Add(steamMod.WorkshopId)
 
-                    UpdateMod(steamMod.WorkshopId, steamMod.Name, False)
-                End If
-            Next
+            '        UpdateMod(steamMod.WorkshopId, steamMod.Name, False)
+            '    End If
+            'Next
 
             If modsToUpdate.Count > 0 Then
                 Dim steamCommand As String = "+login " & MainWindow.Instance.ISteamUserBox.Text & " " & MainWindow.Instance.ISteamPassBox.Password

@@ -1,6 +1,8 @@
 ﻿Imports System.IO
 Imports System.Threading
-Imports System.Windows.Forms
+Imports System.Windows
+Imports System.Windows.Controls
+Imports System.Windows.Media
 Imports FAST2.Models
 
 Class ServerProfile
@@ -354,7 +356,7 @@ Class ServerProfile
             .Filter = "Arma 3 Server Files|arma*.exe"
         }
 
-        If dialog.ShowDialog() <> DialogResult.OK Then
+        If dialog.ShowDialog() <> True Then
             IExecutable.Text = dialog.FileName
         End If
     End Sub
@@ -1066,11 +1068,11 @@ Class ServerProfile
                 newMods.Add(Replace(addon, My.Settings.serverPath & "\", ""))
             Next
 
-            For Each folder In My.Settings.localModFolders
-                For Each addon In Directory.GetDirectories(folder, "@*")
-                    newMods.Add(addon)
-                Next
-            Next
+            'For Each folder In My.Settings.localModFolders
+            '    For Each addon In Directory.GetDirectories(folder, "@*")
+            '        newMods.Add(addon)
+            '    Next
+            'Next
 
             For Each addon In newMods.ToList
                 For Each nAddon In currentMods
