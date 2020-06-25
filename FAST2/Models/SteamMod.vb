@@ -32,9 +32,9 @@ Namespace Models
         Public Shared Function GetSteamMods() As List(Of SteamMod)
             Dim currentSteamMods As New List(Of SteamMod)
 
-            'If My.Settings.steamMods IsNot Nothing Then
-            '    currentSteamMods = My.Settings.steamMods
-            'End If
+            If My.Settings.steamMods IsNot Nothing Then
+                currentSteamMods = My.Settings.steamMods.Mods
+            End If
 
             Return currentSteamMods
         End Function

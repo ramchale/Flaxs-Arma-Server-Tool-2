@@ -254,6 +254,17 @@ Partial Friend NotInheritable Class MySettings
             Me("steamApiKey") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Public Property localModFolders() As Global.FAST2.Models.LocalModFolderCollection
+        Get
+            Return CType(Me("localModFolders"),Global.FAST2.Models.LocalModFolderCollection)
+        End Get
+        Set
+            Me("localModFolders") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

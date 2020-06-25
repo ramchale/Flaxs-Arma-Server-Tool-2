@@ -53,5 +53,8 @@
     <Setting Name="steamApiKey" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="localModFolders" Type="FAST2.Models.LocalModFolderCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

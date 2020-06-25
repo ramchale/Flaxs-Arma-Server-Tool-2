@@ -1068,11 +1068,11 @@ Class ServerProfile
                 newMods.Add(Replace(addon, My.Settings.serverPath & "\", ""))
             Next
 
-            'For Each folder In My.Settings.localModFolders
-            '    For Each addon In Directory.GetDirectories(folder, "@*")
-            '        newMods.Add(addon)
-            '    Next
-            'Next
+            For Each folder In My.Settings.localModFolders.Folders
+                For Each addon In Directory.GetDirectories(folder, "@*")
+                    newMods.Add(addon)
+                Next
+            Next
 
             For Each addon In newMods.ToList
                 For Each nAddon In currentMods
