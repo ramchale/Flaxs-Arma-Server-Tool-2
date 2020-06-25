@@ -169,6 +169,8 @@
     </Compile>
     <Compile Include="Models\Functions.vb" />
     <Compile Include="Models\LocalMod.vb" />
+    <Compile Include="Models\SteamModCollection.vb" />
+    <Compile Include="Models\LocalModCollection.vb" />
     <Compile Include="Models\ServerCollection.vb" />
     <Compile Include="Models\SteamWebApi.vb" />
     <Compile Include="Models\Theme.vb" />

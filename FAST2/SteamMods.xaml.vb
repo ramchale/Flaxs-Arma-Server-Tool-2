@@ -34,9 +34,9 @@ Public Class SteamMods
     End Sub
 
     Private Sub SteamMods_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
-        If My.Settings.steamMods.Count > 0 Then
-            UpdateModsView()
-        End If
+        'If My.Settings.steamMods.Count > 0 Then
+        '    UpdateModsView()
+        'End If
     End Sub
 
     Private Sub IImportSteamModDialog_KeyUp(sender As Object, e As KeyEventArgs) Handles IImportSteamModDialog.KeyUp
@@ -58,27 +58,27 @@ Public Class SteamMods
     End Sub
 
     Private Async Sub SteamMods_Initialized(sender As Object, e As EventArgs) Handles Me.Initialized
-        If My.Settings.steamMods.Count > 0 And My.Settings.checkForModUpdates Then
-            IUpdateProgress.IsIndeterminate = True
-            IModView.IsEnabled = False
-            IProgressInfo.Visibility = Visibility.Visible
-            IProgressInfo.Content = "Checking for updates..."
+        'If My.Settings.steamMods.Count > 0 And My.Settings.checkForModUpdates Then
+        '    IUpdateProgress.IsIndeterminate = True
+        '    IModView.IsEnabled = False
+        '    IProgressInfo.Visibility = Visibility.Visible
+        '    IProgressInfo.Content = "Checking for updates..."
 
-            Dim tasks As New List(Of Task) From {
-                    Task.Run(
-                        Sub()
-                            SteamMod.UpdateInfoFromSteam()
-                        End Sub
-                        )
-                    }
+        '    Dim tasks As New List(Of Task) From {
+        '            Task.Run(
+        '                Sub()
+        '                    SteamMod.UpdateInfoFromSteam()
+        '                End Sub
+        '                )
+        '            }
 
-            Await Task.WhenAll(tasks)
+        '    Await Task.WhenAll(tasks)
 
-            IModView.IsEnabled = True
-            IProgressInfo.Visibility = Visibility.Collapsed
-            IUpdateProgress.IsIndeterminate = False
-            UpdateModsView()
-        End If
+        '    IModView.IsEnabled = True
+        '    IProgressInfo.Visibility = Visibility.Collapsed
+        '    IUpdateProgress.IsIndeterminate = False
+        '    UpdateModsView()
+        'End If
     End Sub
 
     Private Async Sub ImportLauncherFile()
@@ -241,7 +241,7 @@ Public Class SteamMods
 
         If My.Settings.steamMods IsNot Nothing Then
 
-            For Each steamMod In My.Settings.steamMods
+            For Each steamMod In My.Settings.steamMods.Mods
                 IModView.Items.Add(steamMod)
             Next
         End If

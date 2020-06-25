@@ -221,11 +221,10 @@ Partial Friend NotInheritable Class MySettings
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property steamMods() As String
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Public Property steamMods() As Global.FAST2.Models.SteamModCollection
         Get
-            Return CType(Me("steamMods"),String)
+            Return CType(Me("steamMods"),Global.FAST2.Models.SteamModCollection)
         End Get
         Set
             Me("steamMods") = value
